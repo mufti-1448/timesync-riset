@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riset Pengguna TimeSync</title>
+    <meta
+      name="description"
+      content="Riset pengguna TimeSync untuk memahami kebutuhan jadwal harian, widget, notifikasi, dan pengalaman pengguna dalam mengatur aktivitas sehari-hari."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              obsidian: "#101320",
+              cyanGlow: "#00F0FF",
+              violetGlow: "#7701D0",
+              textSoft: "#E5E7EB",
+            },
+            boxShadow: {
+              glow: "0 0 20px rgba(0, 240, 255, 0.35)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background:
+          radial-gradient(
+            circle at top,
+            rgba(119, 1, 208, 0.18),
+            transparent 35%
+          ),
+          radial-gradient(
+            circle at bottom right,
+            rgba(0, 240, 255, 0.12),
+            transparent 25%
+          ),
+          #101320;
+        color: #e5e7eb;
+      }
+
+      .glass {
+        background: rgba(15, 23, 42, 0.5);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      textarea,
+      input {
+        transition: all 0.2s ease;
+      }
+
+      textarea:focus,
+      input:focus {
+        border-color: rgba(119, 1, 208, 0.9);
+        box-shadow: 0 0 0 3px rgba(119, 1, 208, 0.18);
+        outline: none;
+      }
+
+      .btn-cyan {
+        background: linear-gradient(135deg, #00f0ff 0%, #3fe7ff 100%);
+        color: #09121a;
+        box-shadow: 0 10px 25px rgba(0, 240, 255, 0.28);
+      }
+
+      .btn-cyan:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 0 24px rgba(0, 240, 255, 0.55);
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <div class="min-h-screen px-4 py-6 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl">
+        <form
+          action="https://formspree.io/f/mkjgkwad"
+          method="POST"
+          class="glass rounded-3xl shadow-2xl ring-1 ring-white/10"
+        >
+          <div class="px-5 py-6 sm:px-8 sm:py-8">
+            <header class="mb-8">
+              <div
+                class="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium tracking-[0.16em] text-cyan-300 uppercase"
+              >
+                User Research
+              </div>
+
+              <h1
+                class="text-3xl font-black tracking-tight text-white sm:text-4xl"
+              >
+                Riset Pengguna: TimeSync App
+              </h1>
+
+              <p class="mt-4 text-sm leading-6 text-gray-300 sm:text-base">
+                Bantu kami merancang aplikasi jadwal harian yang benar-benar
+                kamu butuhkan, tanpa fitur rapat yang bikin pusing.
+              </p>
+
+              <div class="mt-6">
+                <label
+                  for="email"
+                  class="mb-2 block text-sm font-medium text-gray-200"
+                >
+                  Email kamu
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Masukkan email kamu..."
+                  required
+                  class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-400 focus:border-violet-500"
+                />
+              </div>
+            </header>
+
+            <section class="space-y-6">
+              <div class="border-b border-white/10 pb-3">
+                <h2 class="text-lg font-semibold text-white">
+                  Bagian 1: Memahami Masalah
+                </h2>
+              </div>
+
+              <div>
+                <label
+                  for="q1_kendala"
+                  class="mb-2 block text-sm font-medium text-gray-200"
+                >
+                  1. Apa kesulitan terbesarmu dalam mengatur jadwal kegiatan
+                  sehari-hari?
+                </label>
+                <textarea
+                  id="q1_kendala"
+                  name="q1_kendala"
+                  rows="3"
+                  required
+                  placeholder="Sering lupa waktu kalau udah keasyikan ngoding/nugas..."
+                  class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-400"
+                ></textarea>
+              </div>
+
+              <div>
+                <label
+                  for="q2_cara_lama"
+                  class="mb-2 block text-sm font-medium text-gray-200"
+                >
+                  2. Saat ini, pakai apa biasanya kamu mencatat jadwal?
+                </label>
+                <textarea
+                  id="q2_cara_lama"
+                  name="q2_cara_lama"
+                  rows="3"
+                  required
+                  placeholder="Cuma dicatat di notes bawaan HP atau diingat aja..."
+                  class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-400"
+                ></textarea>
+              </div>
+
+              <div>
+                <label
+                  for="q3_rutinitas"
+                  class="mb-2 block text-sm font-medium text-gray-200"
+                >
+                  3. Bagaimana cara kamu memantau jadwal yang sifatnya rutinitas
+                  berulang?
+                </label>
+                <textarea
+                  id="q3_rutinitas"
+                  name="q3_rutinitas"
+                  rows="3"
+                  required
+                  placeholder="Biasanya bikin tabel jadwal terus dijadikan wallpaper..."
+                  class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-400"
+                ></textarea>
+              </div>
+
+              <div class="border-b border-white/10 pb-3 pt-2">
+                <h2 class="text-lg font-semibold text-white">
+                  Bagian 2: Layar Utama &amp; Visual
+                </h2>
+              </div>
+
+              <div>
+                <label
+                  for="q4_widget"
+                  class="mb-2 block text-sm font-medium text-gray-200"
+                >
+                  4. Kalau kamu pakai widget jadwal di home screen HP, informasi
+                  apa yang HARUS langsung kelihatan?
+                </label>
+                <textarea
+                  id="q4_widget"
+                  name="q4_widget"
+                  rows="3"
+                  required
+                  placeholder="Pengen langsung lihat apa kegiatanku sekarang, jam berapa selesainya..."
+                  class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-400"
+                ></textarea>
+              </div>
+
+              <div>
+                <label
+                  for="q5_kategori"
+                  class="mb-2 block text-sm font-medium text-gray-200"
+                >
+                  5. Apakah kamu butuh memisahkan kegiatan berdasarkan
+                  kategori/warna?
+                </label>
+                <textarea
+                  id="q5_kategori"
+                  name="q5_kategori"
+                  rows="3"
+                  required
+                  placeholder="Butuh banget! Biar sekilas kelihatan mana urusan kerja dan waktu santai..."
+                  class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-400"
+                ></textarea>
+              </div>
+
+              <div class="border-b border-white/10 pb-3 pt-2">
+                <h2 class="text-lg font-semibold text-white">
+                  Bagian 3: Fleksibilitas &amp; Situasi
+                </h2>
+              </div>
+
+              <div>
+                <label
+                  for="q6_perubahan"
+                  class="mb-2 block text-sm font-medium text-gray-200"
+                >
+                  6. Seberapa sering rutinitasmu berubah mendadak, dan gimana
+                  caramu menyelipkan jadwal baru?
+                </label>
+                <textarea
+                  id="q6_perubahan"
+                  name="q6_perubahan"
+                  rows="3"
+                  required
+                  placeholder="Lumayan sering, biasanya jadwal yang ada langsung kegeser semua..."
+                  class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-400"
+                ></textarea>
+              </div>
+
+              <div>
+                <label
+                  for="q7_ekstensi"
+                  class="mb-2 block text-sm font-medium text-gray-200"
+                >
+                  7. Pernah merasa butuh tambahan waktu karena satu kegiatan
+                  belum selesai? Gimana ngaturnya?
+                </label>
+                <textarea
+                  id="q7_ekstensi"
+                  name="q7_ekstensi"
+                  rows="3"
+                  required
+                  placeholder="Sering! Biasanya bablas aja lanjutin ngerjain, jadwal berikutnya jadi telat..."
+                  class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-400"
+                ></textarea>
+              </div>
+
+              <div>
+                <label
+                  for="q8_notifikasi"
+                  class="mb-2 block text-sm font-medium text-gray-200"
+                >
+                  8. Tipe notifikasi seperti apa yang menurutmu paling pas untuk
+                  mengingatkan jadwal?
+                </label>
+                <textarea
+                  id="q8_notifikasi"
+                  name="q8_notifikasi"
+                  rows="3"
+                  required
+                  placeholder="Bunyi notif pendek 15 menit sebelum mulai, jangan alarm panjang..."
+                  class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-400"
+                ></textarea>
+              </div>
+
+              <div class="border-b border-white/10 pb-3 pt-2">
+                <h2 class="text-lg font-semibold text-white">
+                  Bagian 4: Harapan
+                </h2>
+              </div>
+
+              <div>
+                <label
+                  for="q9_keluhan"
+                  class="mb-2 block text-sm font-medium text-gray-200"
+                >
+                  9. Apa hal yang paling bikin malas saat pakai aplikasi
+                  kalender yang ada sekarang?
+                </label>
+                <textarea
+                  id="q9_keluhan"
+                  name="q9_keluhan"
+                  rows="3"
+                  required
+                  placeholder="Terlalu kaku, harus milih jam pakai scroll ribet, kebanyakan fitur rapat..."
+                  class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-400"
+                ></textarea>
+              </div>
+
+              <div>
+                <label
+                  for="q10_alasan"
+                  class="mb-2 block text-sm font-medium text-gray-200"
+                >
+                  10. Apa satu hal paling penting yang bakal bikin kamu mau
+                  pakai aplikasi jadwal baru setiap hari?
+                </label>
+                <textarea
+                  id="q10_alasan"
+                  name="q10_alasan"
+                  rows="3"
+                  required
+                  placeholder="Kalau ringan, bisa offline, ngetik jadwalnya gampang, dan widgetnya estetik."
+                  class="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-400"
+                ></textarea>
+              </div>
+            </section>
+
+            <div class="mt-8">
+              <button
+                type="submit"
+                class="btn-cyan w-full rounded-2xl px-4 py-4 text-base font-bold transition-all duration-300 hover:brightness-110"
+              >
+                Kirim Masukan 🚀
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

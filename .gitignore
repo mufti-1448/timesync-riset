@@ -1,0 +1,26 @@
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Dependency folders
+node_modules/
+
+# Build output
+build/
+dist/
+.cache/
+coverage/
+
+# Vercel
+.vercel/
